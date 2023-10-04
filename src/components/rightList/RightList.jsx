@@ -16,7 +16,7 @@ const RightList = () => {
     ]
 
     return (
-        <div className='w-96 h-[739px] pl-8 mt-6 '>
+        <div className=''>
             <div className="flex items-center justify-center h-12 w-72 mt-10">
                 <img src={pexels01} className='rounded-full h-12 w-12' alt="pic" />
                 <p className='w-44 h-12 flex items-center text-sm ml-2 font-semibold'>hossein</p>
