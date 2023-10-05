@@ -7,14 +7,14 @@ const Header = () => {
 
     return (
         
-            <div className="h-28 mt-8 border-2">
+            <div className="flex flex-col w-full object-cover h-28 mt-8 border-2 ">
                 <div className="flex  border-black bg-white  h-12 border-b-2">
                     <span className="h-12  flex items-center font-bold mx-1 whitespace-nowrap">For you</span>
                     <span className="h-12  flex items-center font-bold mx-3 text-zinc-300">Following</span>
                 </div>
-                <div className="flex justify-center mt-4 items-center">
+                <div className="flex justify-center mt-4 items-center  w-full object-cover overflow-x-scroll">
                     {list.map((item)=>{
-                        return <div className="flex justify-between items-center">{item} </div>
+                        return <div className="flex justify-between items-center overflow-x-scroll">{item} </div>
                     })}
                 </div>
             </div>
