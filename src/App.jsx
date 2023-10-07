@@ -3,6 +3,7 @@ import SideBar from './components/sideBar/sideBar';
 import Header from './components/header/Header';
 import RightList from './components/rightList/RightList';
 import Main from './components/main/Main';
+import BottomBar from './components/bottomBar/bottomBar';
 import 'tailwindcss/tailwind.css';
 import './Styles.css'
 
@@ -10,12 +11,15 @@ import './Styles.css'
 function App() {
   return (
     <div className='flex' >
-      <div className=' md:w-20 xl:w-60 h-16 md:h-screen  border-r-2 hidden md:block left-0'>
+      <div className=' md:w-20 xl:w-60 h-16 md:h-screen border-r-2 hidden md:block left-0'>
         <SideBar />
       </div>
+      <div className='block md:hidden left-0'>
+        <BottomBar />
+      </div>
       <div className='w-full h-full '>
-        <div className='flex justify-center tablet:justify-between'>
-          <div id='s25' className='object-cover flex flex-col justify-center items-center bg-yellow-200 w-[630px]'>
+        <div className='flex justify-center'>
+          <div id='s25' className='object-cover flex flex-col  items-center w-[630px]'>
             <Header />
             <Main />
           </div>

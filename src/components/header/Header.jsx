@@ -7,7 +7,7 @@ const Header = () => {
 
     return (
 
-        <div className="flex-col w-screen md:w-full lg:w-full xl:w-full object-cover h-28 mt-8 border-2 ">
+        <div className="flex-col w-full md:w-full lg:w-full xl:w-full object-cover h-28 mt-8 overflow-hidden">
             <div className="flex border-b-2 bg-white ml-3  h-12">
                 <span className="h-12  flex items-center font-bold mx-1 whitespace-nowrap">For you</span>
                 <span className="h-12  flex items-center font-bold mx-3 text-zinc-300">Following</span>
