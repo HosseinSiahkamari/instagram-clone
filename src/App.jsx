@@ -10,14 +10,14 @@ import './Styles.css'
 
 function App() {
   return (
-    <div className='flex' >
-      <div className=' md:w-20 xl:w-60 h-16 md:h-screen border-r-2 hidden md:block left-0'>
+    <div className='flex overflow-x-clip' >
+      <div className=' md:w-20 xl:w-60 fixed  md:h-screen border-r-2 bg-red-300 hidden md:block left-0'>
         <SideBar />
       </div>
       <div className='block md:hidden left-0'>
         <BottomBar />
       </div>
-      <div className='w-full h-full '>
+      <div className='w-full h-full xl:ml-56'>
         <div className='flex justify-center'>
           <div id='s25' className='object-cover flex flex-col  items-center w-[630px]'>
             <Header />

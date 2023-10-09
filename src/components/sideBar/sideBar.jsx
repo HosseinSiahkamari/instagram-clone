@@ -20,8 +20,8 @@ const SideBar = () => {
     const menuIconsBottom = [home, explore, reels, create, messages, profile]
 
 
-    return (<div>
-        <div className="">
+    return (
+        <div className=" h-screen">
             <img src={instagramLogoText} className='w-28 ml-7 h-24 xl:block md:hidden sm:hidden ' alt="instagram-logo" />
             <img src={instagramLogo} className='w-9 ml-5 h-24 xl:hidden md:block transition-transform duration-500' alt="instagram-logo" />
             <div className=''>
@@ -32,8 +32,7 @@ const SideBar = () => {
                 })}
             </div>
         </div>
-    
-    </div>);
+    );
 }
 
 export default SideBar;
