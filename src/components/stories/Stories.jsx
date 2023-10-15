@@ -3,10 +3,11 @@ import { useEffect, useState } from 'react';
 import Story from '../story/Story';
 
 
+
 const Stories = () => {
-        const [suggestions, setSuggestions] = useState([]);
-        useEffect(() => {
-          const suggestions = [...Array(20)].map((_, i) => ({
+    const [suggestions, setSuggestions] = useState([]);
+    useEffect(() => {
+        const suggestions = [...Array(20)].map((_, i) => ({
             userId: faker.string.uuid(),
             username: faker.internet.userName(),
             email: faker.internet.email(),
@@ -15,18 +16,71 @@ const Stories = () => {
             birthdate: faker.date.birthdate(),
             registeredAt: faker.date.past(),
             key: i,
-          }));
-          setSuggestions(suggestions);
-          console.log(suggestions[0].avatar);
-        }, []);
+        }));
+        setSuggestions(suggestions);
+        console.log(suggestions[0].avatar);
+    }, []);
+
+
+    const slideRightHandler = () => {
+        const rowSlideRight = document.getElementById('dynamicID');
+        const scrollAmount = 10; // میزان اسکرول به هر بار
+        const scrollSpeed = 1; // سرعت اسکرول
+        const targetScrollLeft = rowSlideRight.scrollLeft + 500; // مقدار مورد نظر برای اسکرول
+
+        const animateScroll = () => {
+            if (rowSlideRight.scrollLeft < targetScrollLeft) {
+                rowSlideRight.scrollLeft += scrollAmount;
+                const scrollLeft = rowSlideRight.scrollLeft;
+                requestAnimationFrame(() => {
+                    if (rowSlideRight.scrollLeft === scrollLeft) {
+                        animateScroll();
+                    }
+                });
+            }
+        };
+
+        animateScroll();
+    };
+
+
+    const slideLeftHandler = () => {
+        const rowSlideRight = document.getElementById('dynamicID');
+        const scrollAmount = 10; // میزان اسکرول به هر بار
+        const scrollSpeed = 1; // سرعت اسکرول
+        const targetScrollLeft = rowSlideRight.scrollLeft - 500; // مقدار مورد نظر برای اسکرول به سمت چپ
+
+        const animateScroll = () => {
+            if (rowSlideRight.scrollLeft > targetScrollLeft) {
+                rowSlideRight.scrollLeft -= scrollAmount;
+                const scrollLeft = rowSlideRight.scrollLeft;
+                requestAnimationFrame(() => {
+                    if (rowSlideRight.scrollLeft === scrollLeft) {
+                        animateScroll();
+                    }
+                });
+            }
+        };
+
+        animateScroll();
+    };
 
 
     return (
-        <div className="flex justify-start p-4  items-center h-28 overflow-X-visible w-screen md:w-full lg:w-full xl:w-full object-cover overflow-x-scroll">
-            {suggestions.map((item) => {
-                console.log(item.avatar);
-              return <Story className='' key={item.key} avatar={item.avatar} username={item.username} />
-            })}
+        <div className='relative '>
+            <div className='w-[630px] h-28 bg-purple-400 z-50'>
+                <button onClick={slideLeftHandler} className="absolute left-2  top-7 bg-white flex items-center justify-center h-5 w-5 rounded-full opacity-80 z-30">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z" /></svg>
+                </button>
+                <button onClick={slideRightHandler} className="static w650:absolute right-1/4 w650:-right-0  top-7 bg-white flex items-center justify-center h-5 w-5 rounded-full opacity-80 z-30">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512"><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" /></svg>
+                </button>
+            </div>
+            <div id='dynamicID' className="flex justify-start p-4  items-center h-28  w-screen md:w-full lg:w-full xl:w-full object-cover overflow-x-hidden">
+                {suggestions.map((item) => {
+                    return <Story className='' key={item.key} avatar={item.avatar} username={item.username} />
+                })}
+            </div>
         </div>
     );
 }

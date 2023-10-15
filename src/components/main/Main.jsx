@@ -3,7 +3,7 @@ import BodyMain from "../bodyMain/bodyMain";
 
 const Main = () => {
     return (
-        <div className="flex-col w-full h-96 mx-auto ">
+        <div className="flex-col w-full h-auto  mx-auto ">
             <HeadMain />
             <BodyMain />
            

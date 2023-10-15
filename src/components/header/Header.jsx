@@ -32,7 +32,7 @@ const Header = () => {
                 </div>
             </div>
             <div className="">
-                <Stories className='' />
+                <Stories />
             </div>
         </div>
     );
