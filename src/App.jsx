@@ -20,7 +20,7 @@ function App() {
       <div className='w-full h-full xl:ml-56'>
         <div className='flex justify-start md:justify-center  '>
           <div id='s25' className=' flex flex-col mx-auto w-full md:w-[630px]'>
-            <div className='w-[630px] self-start'>
+            <div className='w-full  md:w-[630px] self-start'>
               <Header className='h-52' />
             </div>
             <div className='w-full md:w-[470px] self-center mt-10 '>

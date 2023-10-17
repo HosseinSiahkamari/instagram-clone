@@ -31,7 +31,7 @@ const Header = () => {
                     </div>
                 </div>
             </div>
-            <div className="">
+            <div className="w-full mx-auto">
                 <Stories />
             </div>
         </div>
