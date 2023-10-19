@@ -6,7 +6,6 @@ const Main = () => {
         <div className="flex-col w-full h-auto  mx-auto ">
             <HeadMain />
             <BodyMain />
-           
         </div>
     );
 }
