@@ -12,8 +12,8 @@ const Header = () => {
         <div className="flex-col w-full md:w-full lg:w-full xl:w-full object-cover  mt-2 overflow-hidden">
             <div className="hidden md:block">
                 <div className="flex border-b-2 bg-white my-3 ml-3 h-12">
-                    <span className="h-12  flex items-center font-bold mx-1 whitespace-nowrap">For you</span>
-                    <span className="h-12  flex items-center font-bold mx-3 text-zinc-300">Following</span>
+                    <span className="h-12  flex items-center font-bold mx-1 whitespace-nowrap cursor-pointer">For you</span>
+                    <span className="h-12  flex items-center font-bold mx-3 text-zinc-300 cursor-pointer">Following</span>
                 </div>
             </div>
             <div className="block md:hidden w-full">
